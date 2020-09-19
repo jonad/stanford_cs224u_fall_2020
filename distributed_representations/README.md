@@ -1,2 +1,2 @@
-## This module focused on distributional word representations.
+## This module focuses on distributional word representations.
 ![](word_representations.png)
