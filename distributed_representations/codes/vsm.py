@@ -212,6 +212,28 @@ def tsne_viz(df, colors:List[str]=None, output_filename:str=None, figsize: Tuple
         plt.show()
 
 
+def character_level_rep(word:str, cf:pd.DataFrame, n:int=4) -> np.ndarray:
+    
+    """Get a representation for `word` as the sum of all the
+    representations of `n`grams that it contains, according to `cf`.
+    Parameters
+    ----------
+    word : str
+        The word to represent.
+    cf : pd.DataFrame
+        The character-level VSM (e.g, the output of `ngram_vsm`).
+    n : int
+        The n-gram size.
+    Returns
+    -------
+    np.array
+    """
+    ngrams = get_character_ngrams(word, n)
+    ngrams = [n for n in ngrams if n in cf.index]
+    reps = cf.loc[ngrams].values
+    return reps.sum(axis=0)
+
+
 def lsa(df:pd.DataFrame, k:int=100) -> pd.DataFrame:
     """
     Latent Semantic Analysis using pure scipy.

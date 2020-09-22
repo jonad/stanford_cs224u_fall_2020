@@ -118,7 +118,7 @@ def log_of_array_ignoring_zeros(M: np.ndarray) -> np.ndarray:
         """
     log_M = M.copy()
     mask = log_M > 0
-    log_M[max] = np.log(log_M[mask])
+    log_M[mask] = np.log(log_M[mask])
     
     return log_M
 
