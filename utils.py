@@ -287,7 +287,6 @@ class DenseTransformer(TransformerMixin):
     well with estimators that expect dense arrays or regular iterables
     as inputs. This little class helps manage that. Especially useful
     in the context of Pipelines.
-
     """
     def fit(self, X, y=None, **fit_params):
         return self
@@ -298,6 +297,51 @@ class DenseTransformer(TransformerMixin):
     def fit_transform(self, X, y=None, **fit_params):
         self.fit(X, y, **fit_params)
         return self.transform(X)
+    
+    
+
+def fit_classifier_with_hyperparameter_search(
+        X:np.ndarray, y:List[int], basemod, cv, param_grid, scoring='f1_macro', verbose=True):
+    """
+    Fit a classifier with hyperparameters set via cross-validation.
+    Parameters
+    ----------
+    X : 2d np.array
+        The matrix of features, one example per row.
+    y : list
+        The list of labels for rows in `X`.
+    basemod : an sklearn model class instance
+        This is the basic model-type we'll be optimizing.
+    cv : int
+        Number of cross-validation folds.
+    param_grid : dict
+        A dict whose keys name appropriate parameters for `basemod` and
+        whose values are lists of values to try.
+    scoring : value to optimize for (default: f1_macro)
+        Other options include 'accuracy' and 'f1_micro'. See
+        http://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter
+    verbose : bool
+        Whether to print some summary information to standard output.
+    Prints
+    ------
+    To standard output (if `verbose=True`)
+        The best parameters found.
+        The best macro F1 score obtained.
+    Returns
+    -------
+    An instance of the same class as `basemod`.
+        A trained model instance, the best model found.
+    """
+    splitter = StratifiedShuffleSplit(n_splits=cv, test_size=0.20)
+    # Find the best model within param_grid:
+    crossvalidator = GridSearchCV(basemod, param_grid, cv=splitter, scoring=scoring)
+    crossvalidator.fit(X, y)
+    # Report some information:
+    if verbose:
+        print("Best params: {}".format(crossvalidator.best_params_))
+        print("Best score: {0:0.03f}".format(crossvalidator.best_score_))
+    # Return the best model found:
+    return crossvalidator.best_estimator_
 
     
         
