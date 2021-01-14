@@ -11,7 +11,7 @@ Fall 2020
 
 # Topics
 
-1. [Distributed  word representations](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/distributed_representations)
+1. [Distributed  word representations](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/distributed_word_representations)
 2. [Supervised Sentiment Analysis](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/supervised_sentiment_analysis)
 3. [Relation Extraction](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/relation_extraction)
 4. [Natural Language Inference](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/natural_language_inference)

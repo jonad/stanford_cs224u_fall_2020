@@ -1,4 +1,4 @@
-# Relation Extraction
+## Relation Extraction
 Relation extraction is the task of extracting from natural language text relational triples such as:
 
 ```
@@ -7,12 +7,12 @@ Relation extraction is the task of extracting from natural language text relatio
 (worked_at, Elon_Musk, Tesla_Motors)
 ```
 
-# Some Applications for Relation Extraction
+## Some Applications for Relation Extraction
 
     1. Knowledge base applications
     2. Extending existing knowledge bases such as wordnet
 
-# Techniques Covered
+## Techniques Covered
 
     1. Hand-build Patterns
     2. Direct Supervision
