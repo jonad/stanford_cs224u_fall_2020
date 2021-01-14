@@ -3,7 +3,14 @@
 This module explores techniques for building distributed representations - vectors that encode the meanings of linguistic units.
 It focuses mainly on distributional representations - the special case where data come entirely from co-occurrences counts in corpora.
 The resulting models are called vector space models (VSMs).
-Topics presented include the following:
+
+
+## Applications
+
+1. Useful for all NLP tasks.
+
+## Topics presented include the following:
+
 1.  Matrix Design Techniques: co-occurrences count between the lexical items and linguistic contexts.
 2.  Reweighting Schemes: techniques used to amplify the important, the trustworthy, the unusual information; and deemphasize the mundane and the quirky information.
 3.  Dimensionality reduction: techniques used to reduce the dimensions of the vector space model
