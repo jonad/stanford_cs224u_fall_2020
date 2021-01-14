@@ -8,3 +8,12 @@ Fall 2020
 
 * [Bill MacCartney](http://nlp.stanford.edu/~wcmac/)
 * [Christopher Potts](http://web.stanford.edu/~cgpotts/)
+
+# Topics
+
+1. [Distributed  word representations](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/distributed_representations)
+2. [Supervised Sentiment Analysis](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/supervised_sentiment_analysis)
+3. [Relation Extraction](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/relation_extraction)
+4. [Natural Language Inference](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/natural_language_inference)
+5. [Grounded Language Understanding](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/grounded_language_understanding)
+6. [Contextual Word Representations](https://github.com/jonad/stanford_cs224u_fall_2020/tree/master/contextual_word_representation)
